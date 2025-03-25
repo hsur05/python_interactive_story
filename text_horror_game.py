@@ -55,6 +55,55 @@ def inventory_print():
         for item, description in inventory.items():
             print(f"{item}: {description}")
 
+
+
+
+
+
+#CHOOSING CLUES
+def choose_clues():
+    while True: 
+            player_input = input(f"[Type random or corresponding item number to investigate clue]: ").lower().strip()
+            clue_list = [clue_1, clue_2, clue_3, clue_4]
+            if player_input == "1":
+                clue_1()
+                return True
+            elif player_input == "2":
+                clue_2()
+                return True
+            elif player_input == "3":
+                clue_3()
+                return True
+            elif player_input == "4":
+                clue_4()
+                return True
+            elif player_input == "random":
+                random_clue = random.choice(clue_list)
+                random_clue()
+                return 
+            else:
+                print("Invalid input- please type 1, 2, 3, 4, etc. or random")
+
+def clue_1():
+    print("test basement")
+    #where the plot continues, like the movie
+
+def clue_2():
+    print("test clue 2")
+    #where the plot continues, like the movie
+
+def clue_3():
+    print("test clue 3")
+    #where the plot continues, like the movie
+
+def clue_4():
+    print("test clue 4")
+    #where the plot continues, like the movie
+
+
+
+
+
 #CHOOSING ROOM
 def choose_room():
     while True: 
@@ -81,6 +130,16 @@ def choose_room():
 
 def parlor():
     print("test parlor") 
+
+    print("Just as you decided to enter the parlor, the light on your phone went out."
+          "\n\"Damn, at least I carried my flashlight,\" I recalled. I was now in the parlor."
+          "\nIf it wasn't for my situation right now, I would've loved to spend time here."
+          "\nThe room had Victorian-styled furnitures- plush velvet couch in dark green, intricate wallpapers with repeating figures of tigers in various poses, and lamps with supple textures as shades."
+          "\nAs I looked around the room to try to find clues, I noticed two strange artifacts. "
+          "\n"
+          )
+
+
     continue_game()
     choose_room()
 
@@ -95,6 +154,7 @@ def kitchen():
 def bathroom():
     print("test bathroom")
     choose_room()
+
 
 
 #PLOT
@@ -114,10 +174,11 @@ print("I got out with my phone light to peek at what's going on, only to notice 
 print("I was cold and alone. And I didn't know what to do..."
       "\nI started to feel my heart sink into my stomach. my breathing was so fast, but I seemed to see better and think clearer.\n"
       "\"What should I do?\" I thought to myself as I paced around the car.\n"
-      "\"Before I left the car, that there are some things I should probably grab with me."
+      "\"Before I left the car, I thought there were things I should probably grab with me."
 )
 
 item_pickup('Pocket knife', 'A medium-sized foldable knife')
+item_pickup('Small LED flashlight', 'A small but bright rechargable flashlight')
 #time.sleep(3)
 
 print("12:05AM"
@@ -127,12 +188,12 @@ print("12:05AM"
 )
 #time.sleep(7)
 
-print("But there was nothing else close by- It was all just trees on one side, and walking along the road would take hours to reach anything."
-      "\nBegrudgingly, I decided I had no other choice but to go see what the light was. \n"
+print("But there was nothing else close by- It was a dense forest on one side, and walking along the road would take hours to reach anybody."
+      "\nBegrudgingly, I thought I had no other choice but to go see what the light was. \n"
 )
 #time.sleep(10)
 
-print("Thankfully, the hike to the smoke more like a brisk walk. And on the way I found a big branch...")
+print("Thankfully, the hike to the smoke was more like a brisk walk. And on the way I found a big branch...")
 item_pickup('Hiking pole', 'A large wooden stick that can also double as a blunt weapon if needed')
 #time.sleep(5)
 
@@ -172,6 +233,7 @@ print("Is my mind playing tricks with me? Ed and Lorraine Warren...I've definite
       "\nBut which room should I go? I was sure that the clues about what was happening and how to get out were somewhere in the house...\n"
 )
 #time.sleep(10)
+
 
 choose_room()
 
