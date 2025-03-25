@@ -1,7 +1,7 @@
 import time
 import random 
 
-
+#FUNCTIONS
 #CONTINUE GAME:
 def continue_game():
     while True:
@@ -57,69 +57,6 @@ def inventory_print():
 
 
 
-
-
-#CHOOSING CLUES
-def choose_clues():
-    while True: 
-        player_input = input(f"[Type number to investigate clue or r for random]: ").lower().strip()
-        clue_list = [clue_1, clue_2, clue_3, clue_4]
-        if player_input == "1":
-            clue_1()
-            return True
-        elif player_input == "2":
-            clue_2()
-            return True
-        elif player_input == "3":
-            clue_3()
-            return True
-        elif player_input == "4":
-            clue_4()
-            return True
-        elif player_input == "random":
-            random_clue = random.choice(clue_list)
-            random_clue()
-            return 
-        else:
-            print("Invalid input- please type 1, 2, 3, 4, etc. or random")
-
-def clue_1():
-    print("test clue 1")
-    clue_inspect("old photograph","I stepped closer to the photograph on the floor underneath the couch and picked it up."
-                 "\nThe photo showed a family of seven, dressed in formal outfits. I don't know if it was just the lighting, but the mom's eyes could not be seen, as it was replaced by two dark shadows. "
-                 "\nCoincidentally, the photo didn't show the tallest child's head, as the picture was torn. Strange."
-                 "\nThere was a handwritten note scribbled on the back: **'Perron Family, 1971.'**"
-                 )
-    while True: 
-        player_input = input("Continue to explore other items in this room? [y or n]")
-        if player_input == 'y':
-            parlor()
-            return True
-        elif player_input == 'n':
-            choose_room()
-            return True
-        else:
-            print("Invalid input- type y or n")
-
-def clue_2():
-    print("test clue 2")
-    clue_inspect("tatted book without a jacket","I carefully opened the book. The first page was titled: \"Apparitions in New England\"."
-                 "\nAs I continued to flip through the book, a particular chapter that was bookmarkred stood out: \n\"1971, The Perron Family asked the Catholic Church for aide as they were experiencing strange phenomenons at home...\""
-                 "\nAlarmed, I tossed the book on the couch, wondering what was going on?"
-                 )
-
-def clue_3():
-    print("test clue 3")
-    clue_inspect("item","description")
-
-def clue_4():
-    print("test clue 4")
-    clue_inspect("item","description")
-
-
-
-
-
 #CHOOSING ROOM
 def choose_room():
     while True: 
@@ -168,7 +105,17 @@ def basement():
     #where the plot continues, like the movie
 
 def kitchen():
-    print("kitchen")
+    print("Like the rest of the house, the kitchen was furnished by the same Victorian decor and appliances."
+          "\nUsing the light to look around, noticed the kitchen was a mess- pots and pans were scattered on the floor, the fridge was left open, and the sink was overflowing with dirty dishes."
+          "\nHowever, everything had a thick layer of dust, as if nothing's been touched for years."
+          "\nI noticed a faint smell of rotten eggs, but couldn't find the source."
+          "\nI saw an item that seemed strange."
+          )
+    #time.sleep(5)
+
+    print("Should I pick up the item?"
+          "\n1) An old, rusted knife stuck to the wall"
+          )
     choose_clues()
     choose_room()
 
@@ -179,9 +126,81 @@ def bathroom():
 
 
 
+#CHOOSING CLUES
+def choose_clues():
+    while True: 
+        player_input = input(f"[Type number to investigate clue or r for random]: ").lower().strip()
+        clue_list = [clue_1, clue_2, clue_3, clue_4]
+        if player_input == "1":
+            clue_1()
+            return True
+        elif player_input == "2":
+            clue_2()
+            return True
+        elif player_input == "3":
+            clue_3()
+            return True
+        elif player_input == "4":
+            clue_4()
+            return True
+        elif player_input == "random":
+            random_clue = random.choice(clue_list)
+            random_clue()
+            return 
+        else:
+            print("Invalid input- please type 1, 2, 3, 4, etc. or random")
+
+def clue_1():
+    print("test clue 1")
+    clue_inspect("old photograph","I stepped closer to the photograph on the floor underneath the couch and picked it up."
+                 "\nThe photo showed a family of seven, dressed in formal outfits. I don't know if it was just the lighting, but the mom's eyes could not be seen, as it was replaced by two dark shadows. "
+                 "\nCoincidentally, the photo didn't show the tallest child's head, as the picture was torn. Strange."
+                 "\nThere was a handwritten note scribbled on the back: **'Perron Family, 1971'**"
+                 )
+    while True: 
+        player_input = input("Continue to explore other items in this room? [y or n]")
+        if player_input == 'y':
+            parlor()
+            return True
+        elif player_input == 'n':
+            choose_room()
+            return True
+        else:
+            print("Invalid input- type y or n")
+
+def clue_2():
+    print("test clue 2")
+    clue_inspect("tatted book without a jacket","I carefully opened the book. The first page was titled: \"Apparitions in New England\"."
+                 "\nAs I continued to flip through the book, a particular chapter that was bookmarkred stood out: \n\"1971, The Perron Family asked the Catholic Church for aide as they were experiencing strange phenomena at home...\""
+                 "\nThe words felt so heavet, like they carried some kind of dark power with them. My heart raced as I read on."
+                 "\nIt described how the family claimed to witness apparitions soon after moving in- doors being opened even though the mom closed it, heading disembodied voices, and finding objects that seemed to be misplaced."
+                 "\nI felt a chill down my spine as I read the  line: \"The Perron Family then asked Ed and Lorraine Warren to investigate the home.\""
+                 "\nEd and Lorraine! Now I remembered! The paranormal investigators, whose names were on the cross I found earlier."
+                 "\nSuddenly, the room felt colder, like a draft was coming from the walls, but all the windows were closed."
+                 "\nI quickly tossed the book onto the couch, and it landed with a thud."
+                 )
+    #time.sleep(15)
+    while True: 
+        player_input = input("Continue to explore other items in this room? [y or n]")
+        if player_input == 'y':
+            parlor()
+            return True
+        elif player_input == 'n':
+            choose_room()
+            return True
+        else:
+            print("Invalid input- type y or n")
+
+def clue_3():
+    print("test clue 3")
+    clue_inspect("Rusty knife","description")
+
+def clue_4():
+    print("test clue 4")
+    clue_inspect("item","description")
 
 
-#PLOT
+#MAIN GAME
 print("BEYOND THE SHADOW\n")
 #time.sleep(1)
 
