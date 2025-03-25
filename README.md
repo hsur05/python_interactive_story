@@ -1,7 +1,7 @@
 # Python Interactive Story Game
 
 ## Description
-A horror short story in which you can interact and make choice in game.
+A horror short story in which you can interact and make choices in-game.
 
 ## Features
 - Feature 1
