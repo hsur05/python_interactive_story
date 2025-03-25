@@ -7,7 +7,7 @@ def item_pickup(item_name, item_description):
     while True:
         player_input = input(f"Should I pick up {item_name}? [Type yes or no]: ").lower().strip()
         if player_input == "yes":
-            print(f"\n**I collected the {item_name}, who knows what I'll need it for**")
+            print(f"\n**I collected the {item_name}**")
             #add to inventory list:
             inventory[item_name]= item_description
             print("\nCURRENT INVENTORY:")
@@ -39,10 +39,49 @@ def clue_inspect(clue_name, clue_description):
 inventory = {}
 def inventory_print():
     if len(inventory) == 0:
-        print("inventory is currently empty")
+        print("Inventory is currently empty")
     else:
         for item, description in inventory.items():
             print(f"{item}: {description}")
+
+#CHOOSING ROOM
+def choose_room():
+    print("Which room do I want to go into? \n1) Parlor \n2) Basement \n3) Kitchen \n4) Bathroom")
+
+    while True: 
+        room_input = input(f"choose a room: [Type 1, 2, 3, 4, or 'random'] ").lower().strip()
+        room_list = [parlor, basement, kitchen, bathroom]
+        if room_input == "1":
+            parlor()
+            return True
+        elif room_input == "2":
+            basement()
+            return True
+        elif room_input == "3":
+            kitchen()
+            return True
+        elif room_input == "4":
+            bathroom()
+            return True
+        elif room_input == "random":
+            random_room = random.choice(room_list)
+            random_room()
+            return 
+        else:
+            print("Invalid input- please type 1, 2, 3, 4, or random")
+
+def parlor():
+    print("test parlor")
+
+def basement():
+    print("test basement")
+    #where the plot continues, like the movie
+
+def kitchen():
+    print("test kitchen")
+
+def bathroom():
+    print("test bathroom")
 
 
 #PLOT
@@ -99,21 +138,26 @@ print("\nJust as I was still pacing and looking around the main entrance for any
       "\nThe old lady didn't sound unfriendly per se, plus in that moment I remembered my conversation with my friend about the \"sunk cost fallacy\"..."
       "\n\"I've come this far and have no other choice...,\" I thought as I suspiciously stepped into the Perron House."
 )
-#timesleep(5)
+#time.sleep(5)
 
 print("\nAs soon as I stepped foot into the dark house, I noticed a faint smell, like a trash can that's been left out for too long"
       "\nRight next to me, on the floor below the shoe rack, there was an item that looked like a wooden cross."
 )
-#timesleep(3)
+#time.sleep(3)
 
 clue_inspect("Small cross", "A wooden cross no bigger than my palm that looks like an heirloom treasure. The wood is scratched and blackened, as if it had been scorched. "
 "\nOn it is a paper tag hanging from the bottom. The faded ink read: \"Property of Ed and Lorraine Warren\""
 "\n")
-#timelseep(2)
+#time.sleep(2)
 
 print("Is my mind playing tricks with me? Ed and Lorraine Warren...I've definitely heard of those names before. Where?"
       "\nMy stomach turns. I swear, for a moment the scratches on the cross seemed like they were moving to form the letters \"t rtur \""
       "\nJust as I was staring down the dark hallway, trying with all my might to remember who Ed and Lorraine were, when suddenly..."
-      "\na strong breeze almost pushed me over. It was from down the hall. Had the owner of this out left out to back to meet me?"
+      "\na strong breeze almost pushed me over. It was from behind me, shutting the door closed. I tried to open it, but the knob wouldn't turn."
       "\nThen, I heard a door shut from somewhere within the house. "
+      "\nThe hair on my back immediately stood up, and I sought to hide in a room"
+      "\nBut which room should I go? I was sure that the clues about what was happening was somewhere in the house...\n"
 )
+#time.sleep(10)
+
+choose_room()
