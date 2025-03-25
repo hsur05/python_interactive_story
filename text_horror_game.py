@@ -2,6 +2,17 @@ import time
 import random 
 
 
+#CONTINUE GAME:
+def continue_game():
+    while True:
+        player_input = input(f"Continue? [type y or n]: ").lower().strip()
+        if player_input == "y":
+            return True
+        elif player_input == 'n':
+            print("taking a break... [type y to continue]")
+        else:
+            print("Invalid input- please type y or n")
+
 #PICKUP ITEM:
 def item_pickup(item_name, item_description):
     while True:
@@ -46,10 +57,8 @@ def inventory_print():
 
 #CHOOSING ROOM
 def choose_room():
-    print("Which room do I want to go into? \n1) Parlor \n2) Basement \n3) Kitchen \n4) Bathroom")
-
     while True: 
-        room_input = input(f"choose a room: [Type 1, 2, 3, 4, or 'random'] ").lower().strip()
+        room_input = input(f"Choose a room [Type 1, 2, 3, 4, or random]: ").lower().strip()
         room_list = [parlor, basement, kitchen, bathroom]
         if room_input == "1":
             parlor()
@@ -71,7 +80,9 @@ def choose_room():
             print("Invalid input- please type 1, 2, 3, 4, or random")
 
 def parlor():
-    print("test parlor")
+    print("test parlor") 
+    continue_game()
+    choose_room()
 
 def basement():
     print("test basement")
@@ -79,9 +90,11 @@ def basement():
 
 def kitchen():
     print("test kitchen")
+    choose_room()
 
 def bathroom():
     print("test bathroom")
+    choose_room()
 
 
 #PLOT
@@ -92,10 +105,10 @@ print("11:43PM")
 #time.sleep(1)
 
 print("I was driving in quiet and rainy Harrisville, Rhode Island, my mind drifting toward recent life troubles...financial...health...relationships... "
-      "\nwhen I was jolted back to the present by a loud *BANG* behind the back passenger's seat...")
+      "\nwhen I was jolted back to reality by a loud *BANG* behind the back passenger's seat...")
 #time.sleep(3)
 
-print("I got out of the car with my phone light to peek at what's going on, only to notice that not only did I have a flat tire, but there was also no cellular reception... \n")
+print("I got out with my phone light to peek at what's going on, only to notice that not only did I get a flat tire, but there was also no cellular reception... \n")
 #time.sleep(3)
 
 print("I was cold and alone. And I didn't know what to do..."
@@ -114,7 +127,7 @@ print("12:05AM"
 )
 #time.sleep(7)
 
-print("But there was nothing- It was all just trees on one side, and walking along the road would take hours to reach anything."
+print("But there was nothing else close by- It was all just trees on one side, and walking along the road would take hours to reach anything."
       "\nBegrudgingly, I decided I had no other choice but to go see what the light was. \n"
 )
 #time.sleep(10)
@@ -134,8 +147,8 @@ print("\n12:26AM"
 )
 #time.sleep(15)
 
-print("\nJust as I was still pacing and looking around the main entrance for anyone in the house, I hear a women from the house shouted in a high pitch \"Do you need help? Come in!\""
-      "\nThe old lady didn't sound unfriendly per se, plus in that moment I remembered my conversation with my friend about the \"sunk cost fallacy\"..."
+print("\nJust as I was still pacing and looking around the main entrance for anyone in the house, I hear a women from inside the house speak in a high pitch \"Do you need help? Come on in! You must be stranded\""
+      "\nI couldn't see her, but the old lady didn't sound unfriendly per se, plus in that moment I remembered my conversation with my friend about the \"sunk cost fallacy\"..."
       "\n\"I've come this far and have no other choice...,\" I thought as I suspiciously stepped into the Perron House."
 )
 #time.sleep(5)
@@ -146,18 +159,19 @@ print("\nAs soon as I stepped foot into the dark house, I noticed a faint smell,
 #time.sleep(3)
 
 clue_inspect("Small cross", "A wooden cross no bigger than my palm that looks like an heirloom treasure. The wood is scratched and blackened, as if it had been scorched. "
-"\nOn it is a paper tag hanging from the bottom. The faded ink read: \"Property of Ed and Lorraine Warren\""
-"\n")
+    "\nOn it is a paper tag hanging from the bottom. The faded ink read: \"Property of Ed and Lorraine Warren\"\n"
+)
 #time.sleep(2)
 
 print("Is my mind playing tricks with me? Ed and Lorraine Warren...I've definitely heard of those names before. Where?"
-      "\nMy stomach turns. I swear, for a moment the scratches on the cross seemed like they were moving to form the letters \"t rtur \""
-      "\nJust as I was staring down the dark hallway, trying with all my might to remember who Ed and Lorraine were, when suddenly..."
+      "\nMy stomach turned. I could've sworn for a moment the scratches on the cross seemed like they were moving to form the letters \"t rtur \""
+      "\nJust as I was staring down the dark hallway, scratching my head to remember who Ed and Lorraine were, when suddenly..."
       "\na strong breeze almost pushed me over. It was from behind me, shutting the door closed. I tried to open it, but the knob wouldn't turn."
-      "\nThen, I heard a door shut from somewhere within the house. "
+      "\nThen, I heard a someone speak from within the house. "
       "\nThe hair on my back immediately stood up, and I sought to hide in a room"
-      "\nBut which room should I go? I was sure that the clues about what was happening was somewhere in the house...\n"
+      "\nBut which room should I go? I was sure that the clues about what was happening and how to get out were somewhere in the house...\n"
 )
 #time.sleep(10)
 
 choose_room()
+
