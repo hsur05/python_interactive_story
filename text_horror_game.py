@@ -5,46 +5,46 @@ import random
 #CONTINUE GAME:
 def continue_game():
     while True:
-        player_input = input(f"Continue? [type y or n]: ").lower().strip()
+        player_input = input(f"Continue? [y or n]: ").lower().strip()
         if player_input == "y":
             return True
         elif player_input == 'n':
-            print("taking a break... [type y to continue]")
+            print("This is all too much, I am taking a break... [y to continue]")
         else:
             print("Invalid input- please type y or n")
 
 #PICKUP ITEM:
 def item_pickup(item_name, item_description):
     while True:
-        player_input = input(f"Should I pick up {item_name}? [Type yes or no]: ").lower().strip()
-        if player_input == "yes":
+        player_input = input(f"Should I pick up {item_name}? [y or n]: ").lower().strip()
+        if player_input == "y":
             print(f"\n**I collected the {item_name}**")
             #add to inventory list:
             inventory[item_name]= item_description
             print("\nCURRENT INVENTORY:")
             inventory_print()
             return True
-        elif player_input == 'no':
+        elif player_input == 'n':
             print("\nI don't think I need it.")
             print("\nCURRENT INVENTORY:")
             inventory_print()
             return True
         else:
-            print("Invalid input- please type yes or no")
+            print("Invalid input- y or n")
 
 #CLUE INSPECT:
 def clue_inspect(clue_name, clue_description):
     while True:
-        player_input = input(f"Should I inspect {clue_name}? [Type yes or no]: ").lower().strip()
-        if player_input == "yes":
+        player_input = input(f"Should I inspect {clue_name}? [y or n]: ").lower().strip()
+        if player_input == "y":
             print(f"\n**I inspected the {clue_name}**")
             print(f"{clue_name}: {clue_description}")
             return True
-        elif player_input == "no":
+        elif player_input == "n":
             print("I shouldn't touch that...")
             return True
         else:
-            print("Invalid input- please type yes or no")
+            print("Invalid input- y or n")
 
 #INVENTORY:
 inventory = {}
@@ -59,46 +59,62 @@ def inventory_print():
 
 
 
-
 #CHOOSING CLUES
 def choose_clues():
     while True: 
-            player_input = input(f"[Type random or corresponding item number to investigate clue]: ").lower().strip()
-            clue_list = [clue_1, clue_2, clue_3, clue_4]
-            if player_input == "1":
-                clue_1()
-                return True
-            elif player_input == "2":
-                clue_2()
-                return True
-            elif player_input == "3":
-                clue_3()
-                return True
-            elif player_input == "4":
-                clue_4()
-                return True
-            elif player_input == "random":
-                random_clue = random.choice(clue_list)
-                random_clue()
-                return 
-            else:
-                print("Invalid input- please type 1, 2, 3, 4, etc. or random")
+        player_input = input(f"[Type number to investigate clue or r for random]: ").lower().strip()
+        clue_list = [clue_1, clue_2, clue_3, clue_4]
+        if player_input == "1":
+            clue_1()
+            return True
+        elif player_input == "2":
+            clue_2()
+            return True
+        elif player_input == "3":
+            clue_3()
+            return True
+        elif player_input == "4":
+            clue_4()
+            return True
+        elif player_input == "random":
+            random_clue = random.choice(clue_list)
+            random_clue()
+            return 
+        else:
+            print("Invalid input- please type 1, 2, 3, 4, etc. or random")
 
 def clue_1():
-    print("test basement")
-    #where the plot continues, like the movie
+    print("test clue 1")
+    clue_inspect("old photograph","I stepped closer to the photograph on the floor underneath the couch and picked it up."
+                 "\nThe photo showed a family of seven, dressed in formal outfits. I don't know if it was just the lighting, but the mom's eyes could not be seen, as it was replaced by two dark shadows. "
+                 "\nCoincidentally, the photo didn't show the tallest child's head, as the picture was torn. Strange."
+                 "\nThere was a handwritten note scribbled on the back: **'Perron Family, 1971.'**"
+                 )
+    while True: 
+        player_input = input("Continue to explore other items in this room? [y or n]")
+        if player_input == 'y':
+            parlor()
+            return True
+        elif player_input == 'n':
+            choose_room()
+            return True
+        else:
+            print("Invalid input- type y or n")
 
 def clue_2():
     print("test clue 2")
-    #where the plot continues, like the movie
+    clue_inspect("tatted book without a jacket","I carefully opened the book. The first page was titled: \"Apparitions in New England\"."
+                 "\nAs I continued to flip through the book, a particular chapter that was bookmarkred stood out: \n\"1971, The Perron Family asked the Catholic Church for aide as they were experiencing strange phenomenons at home...\""
+                 "\nAlarmed, I tossed the book on the couch, wondering what was going on?"
+                 )
 
 def clue_3():
     print("test clue 3")
-    #where the plot continues, like the movie
+    clue_inspect("item","description")
 
 def clue_4():
     print("test clue 4")
-    #where the plot continues, like the movie
+    clue_inspect("item","description")
 
 
 
@@ -107,6 +123,7 @@ def clue_4():
 #CHOOSING ROOM
 def choose_room():
     while True: 
+        print("Which room should I go into? \n1) Parlor \n2) Basement \n3) Kitchen \n4) Bathroom")
         room_input = input(f"Choose a room [Type 1, 2, 3, 4, or random]: ").lower().strip()
         room_list = [parlor, basement, kitchen, bathroom]
         if room_input == "1":
@@ -126,39 +143,46 @@ def choose_room():
             random_room()
             return 
         else:
-            print("Invalid input- please type 1, 2, 3, 4, or random")
+            print("Invalid input- type 1, 2, 3, 4, or random")
 
 def parlor():
-    print("test parlor") 
-
-    print("Just as you decided to enter the parlor, the light on your phone went out."
+    print("Just as I decided to enter the parlor, the light on my phone went out."
           "\n\"Damn, at least I carried my flashlight,\" I recalled. I was now in the parlor."
-          "\nIf it wasn't for my situation right now, I would've loved to spend time here."
-          "\nThe room had Victorian-styled furnitures- plush velvet couch in dark green, intricate wallpapers with repeating figures of tigers in various poses, and lamps with supple textures as shades."
-          "\nAs I looked around the room to try to find clues, I noticed two strange artifacts. "
-          "\n"
+          "\nI locked the door just to be sure."
+          "\nLooking around, I thought if it wasn't for this eerie atmosphere, I would've loved to spend time here."
+          "\nThe room had Victorian-styled furniture- plush velvet couch in olive green, intricate wallpapers with repeating figures of tigers in various poses, and lamps with supple textures as shades."
+          "\nAs I looked around the room to try to find clues, I noticed two items that seemed out of place. "
+          )
+    #time.sleep(5)
+
+    print("Which item should I inspect first?"
+          "\n1) Pick up the old black-and-white photograph"
+          "\n2) Flip through a tattered book without a jacket"
           )
 
-
-    continue_game()
+    choose_clues()
     choose_room()
 
 def basement():
-    print("test basement")
+    print("test basement") 
     #where the plot continues, like the movie
 
 def kitchen():
-    print("test kitchen")
+    print("kitchen")
+    choose_clues()
     choose_room()
 
 def bathroom():
     print("test bathroom")
+    choose_clues()
     choose_room()
 
 
 
+
+
 #PLOT
-print("What's Next?\n")
+print("BEYOND THE SHADOW\n")
 #time.sleep(1)
 
 print("11:43PM")
@@ -198,12 +222,12 @@ item_pickup('Hiking pole', 'A large wooden stick that can also double as a blunt
 #time.sleep(5)
 
 print("\n12:26AM"
-      "\nI reached the location of the smoke pretty soon afterwards."
-      "\nTurns out it was a historcal house, like it was built in the 1700s. \nThe sidings were showing its rotted wooden color, as the paint has peeled off. "
+      "\nI reached the location of the smoke soon afterwards."
+      "\nTurns out it was a historcal house, like it was built in the 18th century. \nThe sidings were showing its rotted wooden color, as the paint has peeled off. "
       "\nThe roof looked to be newly restored with the typical grey shingles. "
       "\nIt was a mansion, maybe 6 or 7 bedrooms? It sat on a spacious lot with overgrown weeds. "
       "\nWalking around the property from the back to find the main entrance, I noticed that only one window was dimly lit, the others pitch black."
-      "\nWhen I reached the front door, I noticed that historic plaque nailed right next to it, which read \"THE PERRON ESTATE, BUILT 1736\""
+      "\nWhen I reached the front door, I noticed that historic plaque nailed right next to it, which read \"THE ARNOLD ESTATE, BUILT 1736\""
       "\n\"hmm sounds familiar, I've definitely heard the name Perron before, but from where?\""
 )
 #time.sleep(15)
@@ -233,7 +257,6 @@ print("Is my mind playing tricks with me? Ed and Lorraine Warren...I've definite
       "\nBut which room should I go? I was sure that the clues about what was happening and how to get out were somewhere in the house...\n"
 )
 #time.sleep(10)
-
 
 choose_room()
 
