@@ -1,7 +1,7 @@
-# Project Title
+# Python Interactive Story Game
 
 ## Description
-A brief description of your project, its purpose, and functionality.
+A horror short story in which you can interact and make choice in game.
 
 ## Features
 - Feature 1
