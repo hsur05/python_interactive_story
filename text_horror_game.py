@@ -1,6 +1,7 @@
 import time
 import random 
 
+
 #FUNCTIONS
 #CONTINUE GAME:
 def continue_game():
@@ -56,13 +57,12 @@ def inventory_print():
             print(f"{item}: {description}")
 
 
-
 #CHOOSING ROOM
 def choose_room():
     while True: 
-        print("Which room should I go into? \n1) Parlor \n2) Basement \n3) Kitchen \n4) Bathroom")
+        print("Which room should I go into? \n1) Parlor \n2) Basement \n3) Kitchen \n4) Bedroom")
         room_input = input(f"Choose a room [Type 1, 2, 3, 4, or random]: ").lower().strip()
-        room_list = [parlor, basement, kitchen, bathroom]
+        room_list = [parlor, basement, kitchen, bedroom]
         if room_input == "1":
             parlor()
             return True
@@ -73,7 +73,7 @@ def choose_room():
             kitchen()
             return True
         elif room_input == "4":
-            bathroom()
+            bedroom()
             return True
         elif room_input == "random":
             random_room = random.choice(room_list)
@@ -114,13 +114,22 @@ def kitchen():
     #time.sleep(5)
 
     print("Should I pick up the item?"
-          "\n1) An old, rusted knife stuck to the wall"
+          "\n3) An old, rusted knife stuck to the wall"
           )
     choose_clues()
     choose_room()
 
-def bathroom():
-    print("test bathroom")
+def bedroom():
+    print("Just like the foyer, the air in the bedroom felt unnaturally cold as I entered. "
+          "\nThe walls were adorned with once-beautiful roses, but now wet stains seep through, forming moldy textures like a parsitic growth."
+          "\nThere was a crib in the corner, next to a huge dresser. I walked over to peek inside. Just one toy, nothing else. It was like there was never a baby inside"
+          "\nSomething about the doll that was inside the crib was so tantilizin, as if calling me over to pick it up. It looked benevolent, so why not?"
+    )
+    time.sleep(10)
+
+    print("Should I pick up the item?"
+          "\n4 A dusty old doll, its eyes seems to stare straight into my soul"
+          )
     choose_clues()
     choose_room()
 
@@ -151,14 +160,13 @@ def choose_clues():
             print("Invalid input- please type 1, 2, 3, 4, etc. or random")
 
 def clue_1():
-    print("test clue 1")
-    clue_inspect("old photograph","I stepped closer to the photograph on the floor underneath the couch and picked it up."
+    clue_inspect("old photograph" , "I stepped closer to the photograph on the floor underneath the couch and picked it up."
                  "\nThe photo showed a family of seven, dressed in formal outfits. I don't know if it was just the lighting, but the mom's eyes could not be seen, as it was replaced by two dark shadows. "
                  "\nCoincidentally, the photo didn't show the tallest child's head, as the picture was torn. Strange."
                  "\nThere was a handwritten note scribbled on the back: **'Perron Family, 1971'**"
                  )
     while True: 
-        player_input = input("Continue to explore other items in this room? [y or n]")
+        player_input = input("Continue to explore other items in this room? [y or n]").lower().strip()
         if player_input == 'y':
             parlor()
             return True
@@ -169,19 +177,18 @@ def clue_1():
             print("Invalid input- type y or n")
 
 def clue_2():
-    print("test clue 2")
-    clue_inspect("tatted book without a jacket","I carefully opened the book. The first page was titled: \"Apparitions in New England\"."
+    clue_inspect("tatted book without a jacket" , "I carefully opened the book. The first page was titled: \"Apparitions in New England\"."
                  "\nAs I continued to flip through the book, a particular chapter that was bookmarkred stood out: \n\"1971, The Perron Family asked the Catholic Church for aide as they were experiencing strange phenomena at home...\""
                  "\nThe words felt so heavet, like they carried some kind of dark power with them. My heart raced as I read on."
                  "\nIt described how the family claimed to witness apparitions soon after moving in- doors being opened even though the mom closed it, heading disembodied voices, and finding objects that seemed to be misplaced."
-                 "\nI felt a chill down my spine as I read the  line: \"The Perron Family then asked Ed and Lorraine Warren to investigate the home.\""
-                 "\nEd and Lorraine! Now I remembered! The paranormal investigators, whose names were on the cross I found earlier."
+                 "\nI felt a chill down my spine as I read the  line: \"With no other choice, the Perron Family asked Ed and Lorraine Warren to investigate the home.\""
+                 "\nEd and Lorraine! Now I remembered- the paranormal investigators, whose names were on the cross I found earlier."
                  "\nSuddenly, the room felt colder, like a draft was coming from the walls, but all the windows were closed."
                  "\nI quickly tossed the book onto the couch, and it landed with a thud."
                  )
     #time.sleep(15)
     while True: 
-        player_input = input("Continue to explore other items in this room? [y or n]")
+        player_input = input("Continue to explore other items in this room? [y or n]").lower().strip()
         if player_input == 'y':
             parlor()
             return True
@@ -192,12 +199,61 @@ def clue_2():
             print("Invalid input- type y or n")
 
 def clue_3():
-    print("test clue 3")
-    clue_inspect("Rusty knife","description")
+    clue_inspect("Rusty knife" , "The knife was covered in rust, its once-sharpened blade dulled and corroded. But there was an energy emanating from it, like it was used for something evil."
+          "\nI felt a chill down my spine as I picked it up. The blade was heavy, and the handle was cold to the touch."
+          "\nAlong the blade, there were traces of brown stains. Was it dried blood? Maybe. It smelled faintly like metal."
+          "\nAnd then, just as I was putting hte knife down, I swear I heard a whisper from behind me, like a breatheless plea."
+          "\n\"cel....\" is what I heard. What was it trying to say? Spell? Cell? Sale? Is it trying to tell me to go somewhere inside the house?"
+          )
+    #time.sleep(10)
 
 def clue_4():
-    print("test clue 4")
-    clue_inspect("item","description")
+    clue_inspect("A dusty doll" , "The old doll was small, but unsettling. It's porceline face had a rigid and stretched smile, and one of the eye's paint was peeling off."
+                 "\n The light from the window hit just right, and I could see my own reflection in the other  pitch black eye."
+                 "\n What was the most unsettling was that it had a small locket necklace. When I opened the rusted locked, a very small slip of paper was inside..."
+                 "\nWritte on it was \"Bethsheba, Bethsheba\""
+                 )
+    #time.sleep(10)
+
+    print("I placed the doll back in its rocking chair, but as I turned awa, I heard a soft creakign sound. The crib was swaing lightly- or so I thought."
+          "\nMy hands were trembling, and I frozen in horror. Was that just the wind? Just as I was trying to convince myself that it was nothing, the doll seemingly lost balance, and fell off the rocking chair."
+          "\nJust when I came to my senses, The doll started moving its head slowly toward my direction."
+          "\nBefore I could react, the doll lunged at me, its cracked arms wrapping around my neck. Its porcelain fingers dug into my skin like jagged claws. "
+          "\nIt was heavier than it should be, as if something far more sinister was weighing it down. "
+          "\nI gasped, struggling to pry it off, but its grip only tightened. My chest pounded. I could feel its cold presence — it wasn’t just a toy anymore."
+          "\nAnd then I remembered — the pocket knife!"
+          )
+
+    if "Pocket knife" in inventory:
+        print("\nWith trembling hands, I fumbled for the pocket knife in my bag. I barely managed to flip the blade open before slashing wildly at the doll. "
+              "\nThe blade sliced through its arm, porcelain shards scattering across the floor. The doll screeched — an inhuman wail that rang in my ears. "
+              "\nIt flailed, its body twitching as if resisting, but I didn’t stop. Another slash, then another. The lifeless grin remained, but it no longer moved.")
+        
+        print("\nPanting, I stumbled back, my hands trembling as I dropped the knife to the floor. The room was silent. The doll’s shattered pieces lay scattered — but I knew this wasn’t over.")
+        choose_room()
+    else:
+        print("\nI reached for my bag in desperation, but I had no weapon. The doll’s grip tightened, and I could feel my body weaken. My vision blurred. I screamed — but it was no use.")
+        print("\nAnd then... everything went black.")
+        #time.sleep(15)
+
+        print("EPILOGUE")
+        #time.sleep(5)
+        print("4AM")
+        #time.sleep(2)
+        print("\nThe glow of a phone screen illuminated a dimly lit room. My girlfriend stared at the location app, her eyes wide with fear. The blinking dot hadn’t moved for hours.")
+        #time.sleep(4)
+        print("\nShe had called the police, pleading for them to check the location. They assured her someone would be sent. But the minutes crawled by, each second heavy with dread.")
+        #time.sleep(4)
+        print("\nBy the time the officers arrived, the forest was silent. The door creaked open to reveal the empty cabin — the lingering scent of damp wood and something… foul.")
+        #time.sleep(4)
+        print("\nThe floor was scratched, as though something had been dragged. The police searched, but there was no sign of me. "
+              "\nOnly the overturned chair and a single porcelain doll, its cracked face frozen in a twisted grin."
+        )
+        #time.sleep(5)
+        print("\nMy girlfriend's phone buzzed. A new notification. \"Location not found.\"")
+        #time.sleep(5)
+        print("\nAnd somewhere, deep within the house, the doll returned to the rocking chair...\n")
+        print("GAME OVER: PRESS CONTROL + C")
 
 
 #MAIN GAME
