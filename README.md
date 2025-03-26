@@ -1,34 +1,21 @@
 # Python Interactive Story Game
 
 ## Description
-A horror short story in which you can interact and make choices in-game.
+A horror short story in which you can interact and make choices in-game by inputting strings when prompted.
 
 ## Features
-- Feature 1
-- Feature 2
-- Feature 3
+- Inventory
+- Choosing room 
+- Choosing to inspect item
 
 ## Installation
 Follow these steps to install and run the project:
 
-```bash
-# Clone the repository
-git clone https://github.com/username/repository.git
-
-# Navigate to the project directory
-cd repository
-
-# Install dependencies
-npm install
-```
-
 ## Usage
-Provide instructions on how to use the project.
-
-```bash
-# Run the application
-npm start
-```
+Download .py file to your local drive. 
+Place it in a directory.
+Change directory to the file's location. 
+In terminal or Visual Studio Code, enter: python text_horror_game.py
 
 ## Configuration
 Describe any environment variables or configuration files required.
@@ -42,7 +29,7 @@ Contributions are welcome! Please follow these guidelines:
 5. Submit a pull request
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project was created by Roy Hsu. Please credit me and reach out with any questions anytime. 
 
 ## Contact
 For any inquiries or feedback, feel free to reach out:
