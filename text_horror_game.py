@@ -56,7 +56,6 @@ def inventory_print():
         for item, description in inventory.items():
             print(f"{item}: {description}")
 
-
 #CHOOSING ROOM
 def choose_room():
     while True: 
@@ -120,16 +119,16 @@ def basement():
     
     if "Pocket knife" in inventory:
         print("You clutch your pocket knife tightly. The entity screeches, its form contorting."
-              "You slash through the ropes holding the woman. She collapses, gasping for air."
-              "The crosses stop turning. The whispers fade."
-              "You’ve broken the curse — for now."
-              "You help her to her feet, and together, you escape the house."
-              "The nightmare is over... or is it?")
+              "\nYou slash through the ropes holding the woman. She collapses, gasping for air."
+              "\nThe crosses stop turning. The whispers fade."
+              "\nYou’ve broken the curse — for now."
+              "\nYou help her to her feet, and together, you escape the house."
+              "\nThe nightmare is over... or is it?")
     else:
         print("You search for something, anything to fight with — but there’s nothing."
-              "The spirit shrieks as the woman’s body levitates higher."
-              "You’re powerless. The final cross turns upside down. The room darkens."
-              "The entity lunges toward you. You scream, but no one hears.")
+              "\nThe spirit shrieks as the woman’s body levitates higher."
+              "\nYou’re powerless. The final cross turns upside down. The room darkens."
+              "\nThe entity lunges toward you. You scream, but no one hears.")
 
 
         print("EPILOGUE")
@@ -150,8 +149,6 @@ def basement():
         #time.sleep(5)
         print("\nAnd somewhere, deep within the house, the doll somehow returned to the rocking chair...\n")
         print("GAME OVER: PRESS CONTROL + C")
-
-
 
 def kitchen():
     print("Like the rest of the house, the kitchen was furnished by the same Victorian decor and appliances."
@@ -181,8 +178,6 @@ def bedroom():
           )
     choose_clues()
     choose_room()
-
-
 
 #CHOOSING CLUES
 def choose_clues():
@@ -215,6 +210,7 @@ def clue_1():
                  "\nCoincidentally, the photo didn't show the tallest child's head, as it had been torn. Strange."
                  "\nThere was a handwritten note scribbled on the back: **'Perron Family, 1971'**"
                  )
+    
     while True: 
         player_input = input("Continue to explore other items in this room? [y or n]").lower().strip()
         if player_input == 'y':
@@ -238,7 +234,8 @@ def clue_2():
                  "\nSuddenly, the room felt colder, like a draft was coming from the walls, but all the windows were closed."
                  "\nI quickly tossed the book onto the couch, and it landed with a thud."
                  )
-    #time.sleep(15)
+    #time.sleep(25)
+
     while True: 
         player_input = input("Continue to explore other items in this room? [y or n]").lower().strip()
         if player_input == 'y':
@@ -360,7 +357,7 @@ print("\n12:26AM"
 #time.sleep(15)
 
 print("\nJust as I was still pacing and looking around the main entrance for anyone in the house, I hear a women from inside the house speak in a high pitch "
-"     \"Do you need help? Come on in! You must be stranded\""
+      "\"Do you need help? Come on in! You must be stranded\""
       "\nI couldn't see her, but the old lady didn't sound unfriendly per se, plus in that moment I remembered my conversation with my friend about the \"sunk cost fallacy\"..."
       "\n\"I've come this far and have no other choice...,\" I thought as I suspiciously stepped into the Perron House."
 )
@@ -384,7 +381,6 @@ print("Is my mind playing tricks with me? Ed and Lorraine Warren...I've definite
       "\nThe hair on my back immediately stood up, and I sought to hide in a room"
       "\nBut which room should I go? I was sure that the clues about what was happening and how to get out were somewhere in the house...\n"
 )
-#time.sleep(10)
+#time.sleep(15)
 
 choose_room()
-
