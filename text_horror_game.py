@@ -87,7 +87,8 @@ def parlor():
           "\n\"Damn, at least I carried my flashlight,\" I recalled. I was now in the parlor."
           "\nI locked the door just to be sure."
           "\nLooking around, I thought if it wasn't for this eerie atmosphere, I would've loved to spend time here."
-          "\nThe room had Victorian-styled furniture- plush velvet couch in olive green, intricate wallpapers with repeating figures of tigers in various poses, and lamps with supple textures as shades."
+          "\nThe room had Victorian-styled furniture- plush velvet couch in olive green, "
+          "intricate wallpapers with repeating figures of tigers in various poses, and lamps with supple textures as shades."
           "\nAs I looked around the room to try to find clues, I noticed two items that seemed out of place. "
           )
     #time.sleep(5)
@@ -101,8 +102,56 @@ def parlor():
     choose_room()
 
 def basement():
-    print("test basement") 
-    #where the plot continues, like the movie
+    print("The basement is damp and freezing, faint whispers echo through the air. They weren't words, but definitely voices."
+          "\nA small lightbulb flickers above, the only light source in the entire basement, casting unsettling shdows on the cracked walls."
+          "\nEven in the dim light, you could see movement in the corner of the room. Was that a hand? A head turning?"
+    )
+    print("Suddenly, the door slams shut behind you.")
+    #time.sleep(3)
+
+    print("A low, guttural voice whispers, 'She waits below.'")
+    
+    print("You see movement in the shadows. Then, she appears — the woman from the paintings, bound and levitating.")
+    print("Her eyes are hollow, and her body twitches unnaturally.")
+    #time.sleep(2)
+
+    print("Crosses on the walls begin to twist, turning upside down one by one.")
+    print("The temperature plummets, and the air grows heavy with dread.")
+    
+    if "Pocket knife" in inventory:
+        print("You clutch your pocket knife tightly. The entity screeches, its form contorting."
+              "You slash through the ropes holding the woman. She collapses, gasping for air."
+              "The crosses stop turning. The whispers fade."
+              "You’ve broken the curse — for now."
+              "You help her to her feet, and together, you escape the house."
+              "The nightmare is over... or is it?")
+    else:
+        print("You search for something, anything to fight with — but there’s nothing."
+              "The spirit shrieks as the woman’s body levitates higher."
+              "You’re powerless. The final cross turns upside down. The room darkens."
+              "The entity lunges toward you. You scream, but no one hears.")
+
+
+        print("EPILOGUE")
+        #time.sleep(5)
+        print("4AM")
+        #time.sleep(2)
+        print("\nThe glow of a phone screen illuminated a dimly lit room. My girlfriend stared at the location app, her eyes wide with fear. The blinking dot hadn’t moved for hours.")
+        #time.sleep(4)
+        print("\nShe had called the police, pleading for them to check the location. They assured her someone would be sent. But the minutes crawled by, each second heavy with dread.")
+        #time.sleep(4)
+        print("\nBy the time the officers arrived, the forest was silent. The door creaked open to reveal the empty cabin — the lingering scent of damp wood and something… foul.")
+        #time.sleep(4)
+        print("\nThe floor was scratched, as though something had been dragged. The police searched, but there was no sign of me. "
+              "\nOnly the overturned chair and a single porcelain doll, its cracked face frozen in a twisted grin."
+        )
+        #time.sleep(5)
+        print("\nMy girlfriend's phone buzzed. A new notification. \"Location not found.\"")
+        #time.sleep(5)
+        print("\nAnd somewhere, deep within the house, the doll somehow returned to the rocking chair...\n")
+        print("GAME OVER: PRESS CONTROL + C")
+
+
 
 def kitchen():
     print("Like the rest of the house, the kitchen was furnished by the same Victorian decor and appliances."
@@ -161,8 +210,9 @@ def choose_clues():
 
 def clue_1():
     clue_inspect("old photograph" , "I stepped closer to the photograph on the floor underneath the couch and picked it up."
-                 "\nThe photo showed a family of seven, dressed in formal outfits. I don't know if it was just the lighting, but the mom's eyes could not be seen, as it was replaced by two dark shadows. "
-                 "\nCoincidentally, the photo didn't show the tallest child's head, as the picture was torn. Strange."
+                 "\nThe photo showed a family of seven, dressed in formal outfits. "
+                 "I don't know if it was just the lighting, but the mom's eyes could not be seen, as it was replaced by two dark shadows. "
+                 "\nCoincidentally, the photo didn't show the tallest child's head, as it had been torn. Strange."
                  "\nThere was a handwritten note scribbled on the back: **'Perron Family, 1971'**"
                  )
     while True: 
@@ -178,9 +228,11 @@ def clue_1():
 
 def clue_2():
     clue_inspect("tatted book without a jacket" , "I carefully opened the book. The first page was titled: \"Apparitions in New England\"."
-                 "\nAs I continued to flip through the book, a particular chapter that was bookmarkred stood out: \n\"1971, The Perron Family asked the Catholic Church for aide as they were experiencing strange phenomena at home...\""
+                 "\nAs I continued to flip through the book, a particular chapter that was bookmarkred stood out: "
+                 "\n\"1971, The Perron Family asked the Catholic Church for aide as they were experiencing strange phenomena at home...\""
                  "\nThe words felt so heavet, like they carried some kind of dark power with them. My heart raced as I read on."
-                 "\nIt described how the family claimed to witness apparitions soon after moving in- doors being opened even though the mom closed it, heading disembodied voices, and finding objects that seemed to be misplaced."
+                 "\nIt described how the family claimed to witness apparitions soon after moving in- "
+                 "doors being opened even though the mom closed it, heading disembodied voices, and finding objects that seemed to be misplaced."
                  "\nI felt a chill down my spine as I read the  line: \"With no other choice, the Perron Family asked Ed and Lorraine Warren to investigate the home.\""
                  "\nEd and Lorraine! Now I remembered- the paranormal investigators, whose names were on the cross I found earlier."
                  "\nSuddenly, the room felt colder, like a draft was coming from the walls, but all the windows were closed."
@@ -252,7 +304,7 @@ def clue_4():
         #time.sleep(5)
         print("\nMy girlfriend's phone buzzed. A new notification. \"Location not found.\"")
         #time.sleep(5)
-        print("\nAnd somewhere, deep within the house, the doll returned to the rocking chair...\n")
+        print("\nAnd somewhere, deep within the house, the doll somehow returned to the rocking chair...\n")
         print("GAME OVER: PRESS CONTROL + C")
 
 
@@ -307,7 +359,8 @@ print("\n12:26AM"
 )
 #time.sleep(15)
 
-print("\nJust as I was still pacing and looking around the main entrance for anyone in the house, I hear a women from inside the house speak in a high pitch \"Do you need help? Come on in! You must be stranded\""
+print("\nJust as I was still pacing and looking around the main entrance for anyone in the house, I hear a women from inside the house speak in a high pitch "
+"     \"Do you need help? Come on in! You must be stranded\""
       "\nI couldn't see her, but the old lady didn't sound unfriendly per se, plus in that moment I remembered my conversation with my friend about the \"sunk cost fallacy\"..."
       "\n\"I've come this far and have no other choice...,\" I thought as I suspiciously stepped into the Perron House."
 )
